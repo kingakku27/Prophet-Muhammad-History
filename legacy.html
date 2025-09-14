@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>இஸ்லாம் பெருமைகள் - Islamic Legacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5e63;
+            --secondary-color: #4caf50;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans Tamil', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 50px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Legacy Section */
+        .legacy-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legacy-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a5e6320' d='M256 0c5.3 0 10.3 2.7 13.3 7.1c15.8 23.5 36.7 63.7 49.2 109c7.2 26.4 11.8 53.3 13.6 78.1c1.8 24.7 1 46.5-1.3 64.5c-2.2 18.1-5.9 32.2-10.8 42.7c-4.8 10.5-10.8 17.5-17.9 22.1c-7.1 4.6-15.2 7-24.3 7c-17.6 0-31.7-8.4-45.6-17.8c-13.9-9.4-27.9-19.1-45.6-19.1c-9.1 0-17.2 2.4-24.3 7c-7.1 4.6-13.1 11.6-17.9 22.1c-4.8 10.5-8.5 24.6-10.8 42.7c-2.3 18-3.1 39.8-1.3 64.5c1.8 24.8 6.4 51.7 13.6 78.1c12.5 45.3 33.4 85.5 49.2 109c3 4.5 8 7.1 13.3 7.1s10.3-2.7 13.3-7.1c15.8-23.5 36.7-63.7 49.2-109c7.2-26.4 11.8-53.3 13.6-78.1c1.8-24.7 1-46.5-1.3-64.5c-2.2-18.1-5.9-32.2-10.8-42.7c-4.8-10.5-10.8-17.5-17.9-22.1c-7.1-4.6-15.2-7-24.3-7c-17.6 0-31.7 8.4-45.6 17.8c-13.9 9.4-27.9 19.1-45.6 19.1c-9.1 0-17.2-2.4-24.3-7c-7.1-4.6-13.1-11.6-17.9-22.1c-4.8-10.5-8.5-24.6-10.8-42.7c-2.3-18-3.1-39.8-1.3-64.5c1.8-24.8 6.4-51.7 13.6-78.1c12.5-45.3 33.4-85.5 49.2-109C245.7 2.7 250.7 0 256 0z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+        }
+        
+        .legacy-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .legacy-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .legacy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .legacy-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .legacy-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .legacy-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            margin: 4rem 0;
+        }
+        
+        .timeline-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 22px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            opacity: 0.1;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .legacy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .legacy-container {
+                padding: 1.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content::after {
+                left: 15px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span data-ta="இஸ்லாம்" data-en="Islam">இஸ்லாம்</span>
+            </div>
+            <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+                data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+            <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+                <li><a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a></li>
+                <li><a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a></li>
+                <li><a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a></li>
+                <li><a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a></li>
+                <li><a href="legacy.html" class="active" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a></li>
+                <li><a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a></li>
+            </ul>
+            
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang('ta')">தமிழ்</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="page-title" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</h2>
+        
+        <section class="legacy-container">
+            <p class="legacy-intro" data-ta="நபிகள் நாயகம் (ஸல்) மறைந்த பின், இஸ்லாம் உலகெங்கும் பரவியது. இன்று அவர்களின் போதனைகள் உலகுக்கு வழிகாட்டுகின்றன."
+               data-en="After his passing, Islam spread across the world. Today, his teachings continue to guide humanity.">
+               நபிகள் நாயகம் (ஸல்) மறைந்த பின், இஸ்லாம் உலகெங்கும் பரவியது. இன்று அவர்களின் போதனைகள் உலகுக்கு வழிகாட்டுகின்றன.
+            </p>
+            
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="உலகளாவிய பரவல்" data-en="Global Spread">உலகளாவிய பரவல்</h3>
+                    <p class="legacy-description" data-ta="இஸ்லாம் இன்று உலகின் இரண்டாவது மிகப்பெரிய மதமாக விளங்குகிறது. 1.8 பில்லியன் மக்கள் இஸ்லாத்தைப் பின்பற்றுகின்றனர்."
+                       data-en="Islam is now the world's second-largest religion. 1.8 billion people follow Islam worldwide.">
+                       இஸ்லாம் இன்று உலகின் இரண்டாவது மிகப்பெரிய மதமாக விளங்குகிறது. 1.8 பில்லியன் மக்கள் இஸ்லாத்தைப் பின்பற்றுகின்றனர்.
+                    </p>
+                </div>
+                
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="குர்ஆனின் பாதுகாப்பு" data-en="Preservation of Quran">குர்ஆனின் பாதுகாப்பு</h3>
+                    <p class="legacy-description" data-ta="குர்ஆன் எனும் இறைவேதம் அதன் அசல் வடிவத்தில் இன்றுவரை பாதுகாக்கப்பட்டுள்ளது. இது இஸ்லாத்தின் நிரந்தர அற்புதமாகும்."
+                       data-en="The Quran has been preserved in its original form to this day. It remains Islam's eternal miracle.">
+                       குர்ஆன் எனும் இறைவேதம் அதன் அசல் வடிவத்தில் இன்றுவரை பாதுகாக்கப்பட்டுள்ளது. இது இஸ்லாத்தின் நிரந்தர அற்புதமாகும்.
+                    </p>
+                </div>
+                
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="நீதி முறை" data-en="Justice System">நீதி முறை</h3>
+                    <p class="legacy-description" data-ta="நபிகள் நாயகம் அமைத்த நீதி முறை சமத்துவம், நியாயம் மற்றும் இரக்கம் ஆகியவற்றை அடிப்படையாகக் கொண்டது."
+                       data-en="The justice system established by Prophet Muhammad was based on equality, fairness, and compassion.">
+                       நபிகள் நாயகம் அமைத்த நீதி முறை சமத்துவம், நியாயம் மற்றும் இரக்கம் ஆகியவற்றை அடிப்படையாகக் கொண்டது.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-section">
+                <h3 class="timeline-title" data-ta="இஸ்லாத்தின் விரிவாக்கம்" data-en="Expansion of Islam">இஸ்லாத்தின் விரிவாக்கம்</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-ta="570 கி.பி" data-en="570 CE">570 கி.பி</div>
+                            <p data-ta="நபிகள் நாயகம் (ஸல்) பிறப்பு" data-en="Birth of Prophet Muhammad (ﷺ)">நபிகள் நாயகம் (ஸல்) பிறப்பு</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-ta="610 கி.பி" data-en="610 CE">610 கி.பி</div>
+                            <p data-ta="முதல் வஹி அறிவிப்பு" data-en="First revelation">முதல் வஹி அறிவிப்பு</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-ta="632 கி.பி" data-en="632 CE">632 கி.பி</div>
+                            <p data-ta="நபிகள் நாயகம் (ஸல்) இறப்பு" data-en="Passing of Prophet Muhammad (ﷺ)">நபிகள் நாயகம் (ஸல்) இறப்பு</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-ta="650 கி.பி" data-en="650 CE">650 கி.பி</div>
+                            <p data-ta="குர்ஆன் முழுமையாகத் தொகுக்கப்பட்டது" data-en="Quran fully compiled">குர்ஆன் முழுமையாகத் தொகுக்கப்பட்டது</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-ta="750 கி.பி" data-en="750 CE">750 கி.பி</div>
+                            <p data-ta="இஸ்லாம் ஸ்பெயின் முதல் இந்தியா வரை பரவியது" data-en="Islam spread from Spain to India">இஸ்லாம் ஸ்பெயின் முதல் இந்தியா வரை பரவியது</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-section">
+                <p class="quote-text" data-ta="'நிச்சயமாக அல்லாஹ்விடம் உங்களுக்கு அழகிய முன் மாதிரி உள்ளது'"
+                   data-en="'There has certainly been for you in the Messenger of Allah an excellent pattern'">
+                   'நிச்சயமாக அல்லாஹ்விடம் உங்களுக்கு அழகிய முன் மாதிரி உள்ளது'
+                </p>
+                <p class="quote-author" data-ta="(குர்ஆன் 33:21)" data-en="(Quran 33:21)">(குர்ஆன் 33:21)</p>
+            </div>
+            
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="மனிதநேயம்" data-en="Humanitarianism">மனிதநேயம்</h3>
+                    <p class="legacy-description" data-ta="நபிகள் நாயகம் மனித உரிமைகள், பெண்கள் உரிமைகள் மற்றும் விலங்கு உரிமைகள் குறித்து வலியுறுத்தினார்."
+                       data-en="Prophet Muhammad emphasized human rights, women's rights, and animal rights.">
+                       நபிகள் நாயகம் மனித உரிமைகள், பெண்கள் உரிமைகள் மற்றும் விலங்கு உரிமைகள் குறித்து வலியுறுத்தினார்.
+                    </p>
+                </div>
+                
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="அறிவொளி" data-en="Enlightenment">அறிவொளி</h3>
+                    <p class="legacy-description" data-ta="இஸ்லாமிய பொற்காலத்தில் அறிவியல், கணிதம் மற்றும் மருத்துவம் வளர்ச்சியடைந்தது. பல கண்டுபிடிப்புகள் இஸ்லாமிய அறிஞர்களால் மேற்கொள்ளப்பட்டன."
+                       data-en="During the Islamic Golden Age, science, mathematics, and medicine flourished with many discoveries by Islamic scholars.">
+                       இஸ்லாமிய பொற்காலத்தில் அறிவியல், கணிதம் மற்றும் மருத்துவம் வளர்ச்சியடைந்தது. பல கண்டுபிடிப்புகள் இஸ்லாமிய அறிஞர்களால் மேற்கொள்ளப்பட்டன.
+                    </p>
+                </div>
+                
+                <div class="legacy-card">
+                    <div class="legacy-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="legacy-title" data-ta="சமூக நலன்" data-en="Social Welfare">சமூக நலன்</h3>
+                    <p class="legacy-description" data-ta="நபிகள் நாயகம் ஏழைகள் பராமரிப்பு, அனாதை கவனிப்பு மற்றும் சமூக நலனுக்கான அடித்தளத்தை அமைத்தார்."
+                       data-en="Prophet Muhammad established the foundation for caring for the poor, orphans, and social welfare.">
+                       நபிகள் நாயகம் ஏழைகள் பராமரிப்பு, அனாதை கவனிப்பு மற்றும் சமூக நலனுக்கான அடித்தளத்தை அமைத்தார்.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <a href="about.html" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a>
+                <a href="contact.html" data-ta="தொடர்பு கூட்டல்" data-en="Contact">தொடர்பு கூட்டல்</a>
+                <a href="privacy.html" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="copyright" data-ta="பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." 
+               data-en="Copyright © 2023 Islamic Teachings. All rights reserved.">
+                பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLang(lang) {
+            document.querySelectorAll('[data-ta]').forEach(element => {
+                if (lang === 'ta') {
+                    element.textContent = element.getAttribute('data-ta');
+                } else if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+        
+        // Initialize page with Tamil language
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('ta');
+        });
+    </script>
+</body>
+</html>

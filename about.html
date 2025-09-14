@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>எம்மைப் பற்றி - About Us | இஸ்லாம்</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5e63;
+            --secondary-color: #4caf50;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans Tamil', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 50px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a5e6320' d='M256 0c5.3 0 10.3 2.7 13.3 7.1c15.8 23.5 36.7 63.7 49.2 109c7.2 26.4 11.8 53.3 13.6 78.1c1.8 24.7 1 46.5-1.3 64.5c-2.2 18.1-5.9 32.2-10.8 42.7c-4.8 10.5-10.8 17.5-17.9 22.1c-7.1 4.6-15.2 7-24.3 7c-17.6 0-31.7-8.4-45.6-17.8c-13.9-9.4-27.9-19.1-45.6-19.1c-9.1 0-17.2 2.4-24.3 7c-7.1 4.6-13.1 11.6-17.9 22.1c-4.8 10.5-8.5 24.6-10.8 42.7c-2.3 18-3.1 39.8-1.3 64.5c1.8 24.8 6.4 51.7 13.6 78.1c12.5 45.3 33.4 85.5 49.2 109c3 4.5 8 7.1 13.3 7.1s10.3-2.7 13.3-7.1c15.8-23.5 36.7-63.7 49.2-109c7.2-26.4 11.8-53.3 13.6-78.1c1.8-24.7 1-46.5-1.3-64.5c-2.2-18.1-5.9-32.2-10.8-42.7c-4.8-10.5-10.8-17.5-17.9-22.1c-7.1-4.6-15.2-7-24.3-7c-17.6 0-31.7 8.4-45.6 17.8c-13.9 9.4-27.9 19.1-45.6 19.1c-9.1 0-17.2-2.4-24.3-7c-7.1-4.6-13.1-11.6-17.9-22.1c-4.8-10.5-8.5-24.6-10.8-42.7c-2.3-18-3.1-39.8-1.3-64.5c1.8-24.8 6.4-51.7 13.6-78.1c12.5-45.3 33.4-85.5 49.2-109C245.7 2.7 250.7 0 256 0z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+        }
+        
+        .about-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .mission-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .mission-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 4rem 0;
+        }
+        
+        .team-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .member-img i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .member-name {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-role {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .member-desc {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .values-title {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .value-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+        }
+        
+        .value-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .value-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .mission-grid, .team-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-container {
+                padding: 1.5rem;
+            }
+            
+            .values-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span data-ta="இஸ்லாம்" data-en="Islam">இஸ்லாம்</span>
+            </div>
+            <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+                data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+            <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+                <li><a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a></li>
+                <li><a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a></li>
+                <li><a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a></li>
+                <li><a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a></li>
+                <li><a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a></li>
+                <li><a href="about.html" class="active" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a></li>
+                <li><a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a></li>
+            </ul>
+            
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang('ta')">தமிழ்</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="page-title" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</h2>
+        
+        <section class="about-container">
+            <p class="about-intro" data-ta="இஸ்லாத்தின் அறிவுரைகளைப் பரப்புவதும், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாறு மற்றும் போதனைகளை மக்களுக்கு எடுத்துச் சொல்லுவதும் எங்களின் நோக்கமாகும்."
+               data-en="Our mission is to spread the teachings of Islam and convey the life history and teachings of Prophet Muhammad (ﷺ) to people.">
+               இஸ்லாத்தின் அறிவுரைகளைப் பரப்புவதும், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாறு மற்றும் போதனைகளை மக்களுக்கு எடுத்துச் சொல்லுவதும் எங்களின் நோக்கமாகும்.
+            </p>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="mission-title" data-ta="எங்கள் நோக்கம்" data-en="Our Mission">எங்கள் நோக்கம்</h3>
+                    <p class="mission-description" data-ta="இஸ்லாத்தின் சரியான அறிவை எளிய முறையில் மக்களுக்கு எடுத்துச் சொல்வதும், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாற்றைப் பரப்புவதும் எங்களின் நோக்கமாகும்."
+                       data-en="Our mission is to convey the correct knowledge of Islam in a simple way to people and spread the life history of Prophet Muhammad (ﷺ).">
+                       இஸ்லாத்தின் சரியான அறிவை எளிய முறையில் மக்களுக்கு எடுத்துச் சொல்வதும், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாற்றைப் பரப்புவதும் எங்களின் நோக்கமாகும்.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="mission-title" data-ta="எங்கள் பார்வை" data-en="Our Vision">எங்கள் பார்வை</h3>
+                    <p class="mission-description" data-ta="இஸ்லாத்தின் அமைதி, சகோதரத்துவம் மற்றும் நீதியான சமுதாயத்தை உருவாக்குவதில் எங்கள் பார்வை அமைந்துள்ளது. நபிகள் நாயகம் (ஸல்) அவர்களின் வழிகாட்டுதல்களைப் பின்பற்றி ஒரு சிறந்த சமூகத்தை உருவாக்குவது."
+                       data-en="Our vision is to create a peaceful, fraternal and just society of Islam. To build a better society by following the guidance of Prophet Muhammad (ﷺ).">
+                       இஸ்லாத்தின் அமைதி, சகோதரத்துவம் மற்றும் நீதியான சமுதாயத்தை உருவாக்குவதில் எங்கள் பார்வை அமைந்துள்ளது. நபிகள் நாயகம் (ஸல்) அவர்களின் வழிகாட்டுதல்களைப் பின்பற்றி ஒரு சிறந்த சமூகத்தை உருவாக்குவது.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="mission-title" data-ta="எங்கள் சேவைகள்" data-en="Our Services">எங்கள் சேவைகள்</h3>
+                    <p class="mission-description" data-ta="இஸ்லாத்தைப் பற்றிய தகவல்களை வழங்குதல், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாறு மற்றும் போதனைகளை எடுத்துச் சொல்லுதல், இஸ்லாத்தைப் பற்றிய தவறான கருத்துகளை சரி செய்தல் போன்ற சேவைகளை நாங்கள் வழங்குகிறோம்."
+                       data-en="We provide services such as providing information about Islam, explaining the life history and teachings of Prophet Muhammad (ﷺ), and correcting misconceptions about Islam.">
+                       இஸ்லாத்தைப் பற்றிய தகவல்களை வழங்குதல், நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாறு மற்றும் போதனைகளை எடுத்துச் சொல்லுதல், இஸ்லாத்தைப் பற்றிய தவறான கருத்துகளை சரி செய்தல் போன்ற சேவைகளை நாங்கள் வழங்குகிறோம்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h3 class="team-title" data-ta="எங்கள் குழு" data-en="Our Team">எங்கள் குழு</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4 class="member-name" data-ta="டாக்டர் அப்துல் ரஹ்மான்" data-en="Dr. Abdul Rahman">டாக்டர் அப்துல் ரஹ்மான்</h4>
+                            <p class="member-role" data-ta="தலைவர்" data-en="Chairman">தலைவர்</p>
+                            <p class="member-desc" data-ta="இஸ்லாமிய ஆய்வுகளில் 20 ஆண்டுகளுக்கும் மேலான அனுபவம்" data-en="Over 20 years of experience in Islamic studies">இஸ்லாமிய ஆய்வுகளில் 20 ஆண்டுகளுக்கும் மேலான அனுபவம்</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4 class="member-name" data-ta="பாத்திமா பீவி" data-en="Fatima Beevi">பாத்திமா பீவி</h4>
+                            <p class="member-role" data-ta="இஸ்லாமிய பேராசிரியர்" data-en="Islamic Scholar">இஸ்லாமிய பேராசிரியர்</p>
+                            <p class="member-desc" data-ta="குர்ஆன் மற்றும் ஹதீஸ் ஆய்வுகளில் நிபுணத்துவம்" data-en="Expert in Quran and Hadith studies">குர்ஆன் மற்றும் ஹதீஸ் ஆய்வுகளில் நிபுணத்துவம்</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4 class="member-name" data-ta="முஹம்மது இப்ராஹிம்" data-en="Muhammad Ibrahim">முஹம்மது இப்ராஹிம்</h4>
+                            <p class="member-role" data-ta="தமிழ் பிரச்சாரகர்" data-en="Tamil Preacher">தமிழ் பிரச்சாரகர்</p>
+                            <p class="member-desc" data-ta="தமிழ் மொழியில் இஸ்லாமிய உள்ளடக்கம் உருவாக்கும் நிபுணர்" data-en="Expert in creating Islamic content in Tamil language">தமிழ் மொழியில் இஸ்லாமிய உள்ளடக்கம் உருவாக்கும் நிபுணர்</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4 class="member-name" data-ta="ஆயிஷா பானு" data-en="Ayesha Banu">ஆயிஷா பானு</h4>
+                            <p class="member-role" data-ta="பெண்கள் பிரிவு ஒருங்கிணைப்பாளர்" data-en="Women's Section Coordinator">பெண்கள் பிரிவு ஒருங்கிணைப்பாளர்</p>
+                            <p class="member-desc" data-ta="பெண்கள் மற்றும் குழந்தைகள் அபிவிருத்தி துறை" data-en="Women and Children Development Department">பெண்கள் மற்றும் குழந்தைகள் அபிவிருத்தி துறை</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="values-section">
+                <h3 class="values-title" data-ta="எங்கள் மதிப்புகள்" data-en="Our Values">எங்கள் மதிப்புகள்</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-star"></i>
+                        <h4 data-ta="உண்மை" data-en="Truth">உண்மை</h4>
+                        <p data-ta="எப்போதும் உண்மையை பேசுதல்" data-en="Always speaking the truth">எப்போதும் உண்மையை பேசுதல்</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h4 data-ta="கருணை" data-en="Compassion">கருணை</h4>
+                        <p data-ta="அனைவரிடமும் கருணை காட்டுதல்" data-en="Showing compassion to everyone">அனைவரிடமும் கருணை காட்டுதல்</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4 data-ta="நீதி" data-en="Justice">நீதி</h4>
+                        <p data-ta="அனைவருக்கும் நீதி வழங்குதல்" data-en="Providing justice to all">அனைவருக்கும் நீதி வழங்குதல்</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4 data-ta="சேவை" data-en="Service">சேவை</h4>
+                        <p data-ta="மனித சமூகத்திற்கு சேவை செய்தல்" data-en="Serving the human community">மனித சமூகத்திற்கு சேவை செய்தல்</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-intro">
+                <p data-ta="நாங்கள் இஸ்லாத்தின் சாரத்தைப் பரப்புவதில் தீவிரமாக ஈடுபட்டுள்ளோம். நபிகள் நாயகம் (ஸல்) அவர்களின் போதனைகள் முழு மனித சமூகத்திற்கும் சொந்தமானது என்பதை உலகிற்கு எடுத்துச் சொல்வதே எங்கள் நோக்கமாகும்."
+                       data-en="We are deeply committed to spreading the essence of Islam. Our goal is to convey to the world that the teachings of Prophet Muhammad (ﷺ) belong to the entire human community.">
+                       நாங்கள் இஸ்லாத்தின் சாரத்தைப் பரப்புவதில் தீவிரமாக ஈடுபட்டுள்ளோம். நபிகள் நாயகம் (ஸல்) அவர்களின் போதனைகள் முழு மனித சமூகத்திற்கும் சொந்தமானது என்பதை உலகிற்கு எடுத்துச் சொல்வதே எங்கள் நோக்கமாகும்.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <a href="about.html" class="active" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a>
+                <a href="contact.html" data-ta="தொடர்பு கூட்டல்" data-en="Contact">தொடர்பு கூட்டல்</a>
+                <a href="privacy.html" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="copyright" data-ta="பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." 
+               data-en="Copyright © 2023 Islamic Teachings. All rights reserved.">
+                பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLang(lang) {
+            document.querySelectorAll('[data-ta]').forEach(element => {
+                if (lang === 'ta') {
+                    element.textContent = element.getAttribute('data-ta');
+                } else if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+        
+        // Initialize page with Tamil language
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('ta');
+        });
+    </script>
+</body>
+</html>

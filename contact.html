@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Prophet Muhammad (ﷺ)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d8b4e;
+      --secondary: #1c5c33;
+      --accent: #d4af37;
+      --light: #f8f5e6;
+      --dark: #222;
+      --text: #333;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+      opacity: 0.1;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+    
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    
+    .lang-toggle:hover {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .lang-toggle.active {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      padding: 18px 20px;
+      display: inline-block;
+      transition: var(--transition);
+      position: relative;
+      font-weight: 600;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+    
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a.active {
+      color: var(--primary);
+    }
+    
+    /* Content Section */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 40px;
+      border-radius: 10px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info h3 {
+      color: white;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    
+    .contact-detail i {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: var(--accent);
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(13, 139, 78, 0.2);
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--accent);
+      color: var(--dark);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .submit-btn:hover {
+      background: #c19b2e;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+      gap: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: white;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    
+    .footer-column p {
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-container {
+        flex-wrap: wrap;
+      }
+      
+      nav a {
+        padding: 15px;
+        font-size: 0.9rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .contact-info,
+      .contact-form {
+        padding: 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      .lang-toggle {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+      }
+      
+      nav a {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-info,
+      .contact-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+          data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+      <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+      <div class="language-switcher">
+        <button class="lang-toggle active" onclick="switchLang('ta')">தமிழ்</button>
+        <button class="lang-toggle" onclick="switchLang('en')">English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a>
+      <a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a>
+      <a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a>
+      <a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a>
+      <a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a>
+      <a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a>
+      <a href="contact.html" class="active" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2 data-ta="தொடர்பு" data-en="Contact">தொடர்பு</h2>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 data-ta="எங்களை தொடர்பு கொள்ள" data-en="Get In Touch">எங்களை தொடர்பு கொள்ள</h3>
+          
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <p data-ta="டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை"
+               data-en="DP education IT campus ,Oddamavadi , Sri lanka">
+               டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை
+            </p>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <p>kingakku27@gmail.com</p>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-phone"></i>
+            <p>+91 98765 43210</p>
+          </div>
+          
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <p data-ta="திங்கள் - வெள்ளி: 9:00 AM - 5:00 PM"
+               data-en="Monday - Friday: 9:00 AM - 5:00 PM">
+               திங்கள் - வெள்ளி: 9:00 AM - 5:00 PM
+            </p>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3 data-ta="தங்கள் கருத்தை தெரிவியுங்கள்" data-en="Share Your Feedback">தங்கள் கருத்தை தெரிவியுங்கள்</h3>
+          <p data-ta="இந்த வலைத்தளத்தைப் பற்றிய உங்கள் கருத்துகளை எங்களுக்கு தெரிவிக்கவும்."
+             data-en="Share your feedback about this website with us.">
+             இந்த வலைத்தளத்தைப் பற்றிய உங்கள் கருத்துகளை எங்களுக்கு தெரிவிக்கவும்.
+          </p>
+          
+          <form>
+            <div class="form-group">
+              <label for="name" data-ta="பெயர்:" data-en="Name:">பெயர்:</label>
+              <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" data-ta="மின்னஞ்சல்:" data-en="Email:">மின்னஞ்சல்:</label>
+              <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" data-ta="செய்தி:" data-en="Message:">செய்தி:</label>
+              <textarea id="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span data-ta="அனுப்பு" data-en="Send">அனுப்பு</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 data-ta="தொடர்புக்கு" data-en="Contact Us">தொடர்புக்கு</h3>
+          <p data-ta="இந்த வலைத்தளம் குறித்து உங்களுக்கு ஏதேனும் கேள்விகள் இருந்தால், தயவு செய்து எங்களை தொடர்பு கொள்ளுங்கள்."
+             data-en="If you have any questions about this website, please feel free to contact us.">
+             இந்த வலைத்தளம் குறித்து உங்களுக்கு ஏதேனும் கேள்விகள் இருந்தால், தயவு செய்து எங்களை தொடர்பு கொள்ளுங்கள்.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3 data-ta="தொடர்பு இணைப்புகள்" data-en="Quick Links">தொடர்பு இணைப்புகள்</h3>
+          <p><a href="contact.html" data-ta="தொடர்பு பக்கம்" data-en="Contact Page">தொடர்பு பக்கம்</a></p>
+          <p><a href="about.html" data-ta="எங்களைப் பற்றி" data-en="About Us">எங்களைப் பற்றி</a></p>
+          <p><a href="privacy.html" data-ta="தனியுரிமைக் கொள்கை" data-en="Privacy Policy">தனியுரிமைக் கொள்கை</a></p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 data-ta="முகவரி" data-en="Address">முகவரி</h3>
+          <p data-ta="டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை"
+             data-en="DP education IT campus ,Oddamavadi , Sri lanka">
+             டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை
+          </p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 | DP education IT campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language switching functionality
+    function switchLang(lang) {
+      document.querySelectorAll('[data-ta], [data-en]').forEach(element => {
+        if (element.getAttribute('data-' + lang)) {
+          element.textContent = element.getAttribute('data-' + lang);
+        }
+      });
+      
+      // Update active button state
+      document.querySelectorAll('.lang-toggle').forEach(button => {
+        button.classList.remove('active');
+      });
+      document.querySelector(`.lang-toggle[onclick="switchLang('${lang}')"]`).classList.add('active');
+      
+      // Update page title based on language
+      if (lang === 'ta') {
+        document.title = 'தொடர்பு – நபிகள் நாயகம் (ﷺ)';
+      } else {
+        document.title = 'Contact – Prophet Muhammad (ﷺ)';
+      }
+    }
+    
+    // Set Tamil as default language
+    document.addEventListener('DOMContentLoaded', function() {
+      switchLang('ta');
+      
+      // Form submission handling
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Simple validation
+        if (name && email && message) {
+          // In a real application, you would send this data to a server
+          alert(document.querySelector('[data-ta="தங்கள் கருத்து வெற்றிகரமாக அனுப்பப்பட்டது!"]') ?
+                'தங்கள் கருத்து வெற்றிகரமாக அனுப்பப்பட்டது!' : 
+                'Your feedback has been successfully sent!');
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

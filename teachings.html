@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>இஸ்லாம் போதனைகள் - Islamic Teachings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a5e63;
+            --secondary-color: #4caf50;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-content h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Teachings Section */
+        .teachings-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .teaching-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .teaching-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .teaching-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .teaching-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        .teaching-text {
+            flex: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .teaching-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span data-ta="இஸ்லாம்" data-en="Islam">இஸ்லாம்</span>
+            </div>
+            <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+                data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+            <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+                <li><a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a></li>
+                <li><a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a></li>
+                <li><a href="teachings.html" class="active" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a></li>
+                <li><a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a></li>
+                <li><a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a></li>
+                <li><a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a></li>
+            </ul>
+            
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang('ta')">தமிழ்</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="page-title" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</h2>
+        
+        <section class="teachings-container">
+            <ul class="teaching-list">
+                <li class="teaching-item">
+                    <i class="fas fa-hands teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="ஒரே இறைவனை வணங்குதல்." data-en="Worship one God.">ஒரே இறைவனை வணங்குதல்.</p>
+                    </div>
+                </li>
+                <li class="teaching-item">
+                    <i class="fas fa-equals teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="அனைவரிடமும் சமத்துவம்." data-en="Equality for all people.">அனைவரிடமும் சமத்துவம்.</p>
+                    </div>
+                </li>
+                <li class="teaching-item">
+                    <i class="fas fa-heart teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="அன்பு, கருணை மற்றும் நீதி." data-en="Love, mercy, and justice.">அன்பு, கருணை மற்றும் நீதி.</p>
+                    </div>
+                </li>
+                <li class="teaching-item">
+                    <i class="fas fa-hand-holding-heart teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="வறியோர்க்கு உதவி செய்தல்." data-en="Helping the poor and needy.">வறியோர்க்கு உதவி செய்தல்.</p>
+                    </div>
+                </li>
+                <li class="teaching-item">
+                    <i class="fas fa-book teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="அறிவைத் தேடுதல்." data-en="Seeking knowledge.">அறிவைத் தேடுதல்.</p>
+                    </div>
+                </li>
+                <li class="teaching-item">
+                    <i class="fas fa-shield-alt teaching-icon"></i>
+                    <div class="teaching-text">
+                        <p data-ta="சொல்லும் செயலும் ஒத்திருத்தல்." data-en="Integrity in word and deed.">சொல்லும் செயலும் ஒத்திருத்தல்.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <a href="about.html" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a>
+                <a href="contact.html" data-ta="தொடர்பு கூட்டல்" data-en="Contact">தொடர்பு கூட்டல்</a>
+                <a href="privacy.html" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="copyright" data-ta="பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." 
+               data-en="Copyright © 2023 Islamic Teachings. All rights reserved.">
+                பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLang(lang) {
+            document.querySelectorAll('[data-ta]').forEach(element => {
+                if (lang === 'ta') {
+                    element.textContent = element.getAttribute('data-ta');
+                } else if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+        
+        // Initialize page with Tamil language
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('ta');
+        });
+    </script>
+</body>
+</html>

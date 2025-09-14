@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தனியுரிமைக் கொள்கை - Privacy Policy | இஸ்லாம்</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5e63;
+            --secondary-color: #4caf50;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans Tamil', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 50px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Policy Section */
+        .policy-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a5e6320' d='M256 0c5.3 0 10.3 2.7 13.3 7.1c15.8 23.5 36.7 63.7 49.2 109c7.2 26.4 11.8 53.3 13.6 78.1c1.8 24.7 1 46.5-1.3 64.5c-2.2 18.1-5.9 32.2-10.8 42.7c-4.8 10.5-10.8 17.5-17.9 22.1c-7.1 4.6-15.2 7-24.3 7c-17.6 0-31.7-8.4-45.6-17.8c-13.9-9.4-27.9-19.1-45.6-19.1c-9.1 0-17.2 2.4-24.3 7c-7.1 4.6-13.1 11.6-17.9 22.1c-4.8 10.5-8.5 24.6-10.8 42.7c-2.3 18-3.1 39.8-1.3 64.5c1.8 24.8 6.4 51.7 13.6 78.1c12.5 45.3 33.4 85.5 49.2 109c3 4.5 8 7.1 13.3 7.1s10.3-2.7 13.3-7.1c15.8-23.5 36.7-63.7 49.2-109c7.2-26.4 11.8-53.3 13.6-78.1c1.8-24.7 1-46.5-1.3-64.5c-2.2-18.1-5.9-32.2-10.8-42.7c-4.8-10.5-10.8-17.5-17.9-22.1c-7.1-4.6-15.2-7-24.3-7c-17.6 0-31.7 8.4-45.6 17.8c-13.9 9.4-27.9 19.1-45.6 19.1c-9.1 0-17.2-2.4-24.3-7c-7.1-4.6-13.1-11.6-17.9-22.1c-4.8-10.5-8.5-24.6-10.8-42.7c-2.3-18-3.1-39.8-1.3-64.5c1.8-24.8 6.4-51.7 13.6-78.1c12.5-45.3 33.4-85.5 49.2-109C245.7 2.7 250.7 0 256 0z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+        }
+        
+        .policy-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .policy-heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .policy-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .policy-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .policy-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .policy-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            text-align: center;
+            font-style: italic;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .policy-container {
+                padding: 1.5rem;
+            }
+            
+            .policy-heading {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span data-ta="இஸ்லாம்" data-en="Islam">இஸ்லாம்</span>
+            </div>
+            <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+                data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+            <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+                <li><a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a></li>
+                <li><a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a></li>
+                <li><a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a></li>
+                <li><a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a></li>
+                <li><a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a></li>
+                <li><a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a></li>
+                <li><a href="privacy.html" class="active" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a></li>
+            </ul>
+            
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang('ta')">தமிழ்</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="page-title" data-ta="தனியுரிமைக் கொள்கை" data-en="Privacy Policy">தனியுரிமைக் கொள்கை</h2>
+        
+        <section class="policy-container">
+            <p class="policy-intro" data-ta="உங்கள் தனியுரிமை எங்களுக்கு முக்கியம். எங்கள் தனியுரிமைக் கொள்கை எந்தத் தகவல்களை நாங்கள் சேகரிக்கிறோம், அதை நாங்கள் எவ்வாறு பயன்படுத்துகிறோம் மற்றும் பாதுகாக்கிறோம் என்பதை விளக்குகிறது."
+               data-en="Your privacy is important to us. This privacy policy explains what information we collect, how we use and protect it.">
+               உங்கள் தனியுரிமை எங்களுக்கு முக்கியம். எங்கள் தனியுரிமைக் கொள்கை எந்தத் தகவல்களை நாங்கள் சேகரிக்கிறோம், அதை நாங்கள் எவ்வாறு பயன்படுத்துகிறோம் மற்றும் பாதுகாக்கிறோம் என்பதை விளக்குகிறது.
+            </p>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 data-ta="சேகரிக்கப்படும் தகவல்கள்" data-en="Information We Collect">சேகரிக்கப்படும் தகவல்கள்</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="நீங்கள் எங்கள் வеб்சைட்டைப் பார்வையிடும்போது, நாங்கள் பின்வரும் தகவல்களை சேகரிக்கலாம்:"
+                       data-en="When you visit our website, we may collect the following information:">
+                       நீங்கள் எங்கள் வеб்சைட்டைப் பார்வையிடும்போது, நாங்கள் பின்வரும் தகவல்களை சேகரிக்கலாம்:
+                    </p>
+                    <ul>
+                        <li data-ta="உங்கள் IP முகவரி மற்றும் உலாவி வகை" data-en="Your IP address and browser type">உங்கள் IP முகவரி மற்றும் உலாவி வகை</li>
+                        <li data-ta="நீங்கள் பார்வையிட்ட பக்கங்கள் மற்றும் நேரம்" data-en="Pages you visited and time spent">நீங்கள் பார்வையிட்ட பக்கங்கள் மற்றும் நேரம்</li>
+                        <li data-ta="தொடர்பு படிவத்தின் மூலம் வழங்கப்பட்ட தகவல்கள்" data-en="Information provided through contact forms">தொடர்பு படிவத்தின் மூலம் வழங்கப்பட்ட தகவல்கள்</li>
+                        <li data-ta="நீங்கள் எங்கள் நிகழ்வுகளில் பதிவு செய்தால் தனிப்பட்ட விவரங்கள்" data-en="Personal details if you register for our events">நீங்கள் எங்கள் நிகழ்வுகளில் பதிவு செய்தால் தனிப்பட்ட விவரங்கள்</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-ta="தகவல்களைப் பயன்படுத்துதல்" data-en="How We Use Information">தகவல்களைப் பயன்படுத்துதல்</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="நாங்கள் சேகரிக்கும் தகவல்களை பின்வரும் வழிகளில் பயன்படுத்துகிறோம்:"
+                       data-en="We use the information we collect in the following ways:">
+                       நாங்கள் சேகரிக்கும் தகவல்களை பின்வரும் வழிகளில் பயன்படுத்துகிறோம்:
+                    </p>
+                    <ul>
+                        <li data-ta="எங்கள் சேவைகளை மேம்படுத்தவும் ம personalize செய்யவும்" data-en="To improve and personalize our services">எங்கள் சேவைகளை மேம்படுத்தவும் ம personalize செய்யவும்</li>
+                        <li data-ta="பயனர் கேள்விகளுக்கு பதிலளிக்க" data-en="To respond to user inquiries">பயனர் கேள்விகளுக்கு பதிலளிக்க</li>
+                        <li data-ta="இஸ்லாமிய உள்ளடக்கம் மற்றும் நிகழ்வுகள் குறித்து உங்களுக்கு தகவல் அளிக்க" data-en="To inform you about Islamic content and events">இஸ்லாமிய உள்ளடக்கம் மற்றும் நிகழ்வுகள் குறித்து உங்களுக்கு தகவல் அளிக்க</li>
+                        <li data-ta="வெப்சைட் பாதுகாப்பை உறுதி செய்ய" data-en="To ensure website security">வெப்சைட் பாதுகாப்பை உறுதி செய்ய</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3 data-ta="குக்கீகள் (Cookies)" data-en="Cookies">குக்கீகள் (Cookies)</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="எங்கள் வெப்சைட் பயனர் அனுபவத்தை மேம்படுத்த குக்கீகளைப் பயன்படுத்துகிறது. குக்கீகள் என்பது உங்கள் கணினியில் சேமிக்கப்படும் சிறிய தகவல் கோப்புகள் ஆகும். நீங்கள் எங்கள் வெப்சைட்டைப் பார்வையிடும்போது இவை தானாகவே உருவாக்கப்படுகின்றன."
+                       data-en="Our website uses cookies to enhance user experience. Cookies are small information files stored on your computer. They are created automatically when you visit our website.">
+                       எங்கள் வெப்சைட் பயனர் அனுபவத்தை மேம்படுத்த குக்கீகளைப் பயன்படுத்துகிறது. குக்கீகள் என்பது உங்கள் கணினியில் சேமிக்கப்படும் சிறிய தகவல் கோப்புகள் ஆகும். நீங்கள் எங்கள் வெப்சைட்டைப் பார்வையிடும்போது இவை தானாகவே உருவாக்கப்படுகின்றன.
+                    </p>
+                    <p data-ta="நீங்கள் உங்கள் உலாவி அமைப்புகள் மூலம் குக்கீகளை நிராகரிக்க或者 நிர்வகிக்க முடியும், ஆனால் இது வெப்சைட்டின் சில செயல்பாடுகளை பாதிக்கக்கூடும்."
+                       data-en="You can reject or manage cookies through your browser settings, but this may affect some website functionality.">
+                       நீங்கள் உங்கள் உலாவி அமைப்புகள் மூலம் குக்கீகளை நிராகரிக்க或者 நிர்வகிக்க முடியும், ஆனால் இது வெப்சைட்டின் சில செயல்பாடுகளை பாதிக்கக்கூடும்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 data-ta="தகவல் பாதுகாப்பு" data-en="Data Security">தகவல் பாதுகாப்பு</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="உங்கள் தனிப்பட்ட தகவல்களைப் பாதுகாப்பதே எங்கள் முன்னுரிமை. நாங்கள் தகவல்களைப் பாதுகாக்க பொருத்தமான தொழில்நுட்ப மற்றும் நிறுவன நடவடிக்கைகளைப் பயன்படுத்துகிறோம். இருப்பினும், இணையத்தில் தரவு பரிமாற்றம் முற்றிலும் பாதுகாப்பானது அல்ல என்பதை நினைவில் கொள்ளவும்."
+                       data-en="Protecting your personal information is our priority. We use appropriate technical and organizational measures to safeguard information. However, please remember that data transmission over the internet is not completely secure.">
+                       உங்கள் தனிப்பட்ட தகவல்களைப் பாதுகாப்பதே எங்கள் முன்னுரிமை. நாங்கள் தகவல்களைப் பாதுகாக்க பொருத்தமான தொழில்நுட்ப மற்றும் நிறுவன நடவடிக்கைகளைப் பயன்படுத்துகிறோம். இருப்பினும், இணையத்தில் தரவு பரிமாற்றம் முற்றிலும் பாதுகாப்பானது அல்ல என்பதை நினைவில் கொள்ளவும்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 data-ta="மூன்றாம் தரப்பினருக்கு வெளியீடு" data-en="Third-Party Disclosure">மூன்றாம் தரப்பினருக்கு வெளியீடு</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="எங்கள் நம்பகத்தன்மைக்காக தேவையான சூழ்நிலைகளைத் தவிர, உங்கள் தனிப்பட்ட தகவல்களை நாங்கள் விற்பனை செய்யவோ, வணிகம் செய்யவோ或者 பிற நிறுவனங்களுக்கு வழங்கவோ மாட்டோம். சட்டப்படியான கோரிக்கைகள்或者 அதிகாரப்பூர்வ விசாரணைகளுக்கு உட்பட்டு மட்டுமே தகவல்களை வெளியிட முடியும்."
+                       data-en="We do not sell, trade, or otherwise transfer your personal information to outside parties except for reliability purposes. Information may only be released subject to legal requests or official investigations.">
+                       எங்கள் நம்பகத்தன்மைக்காக தேவையான சூழ்நிலைகளைத் தவிர, உங்கள் தனிப்பட்ட தகவல்களை நாங்கள் விற்பனை செய்யவோ, வணிகம் செய்யவோ或者 பிற நிறுவனங்களுக்கு வழங்கவோ மாட்டோம். சட்டப்படியான கோரிக்கைகள்或者 அதிகாரப்பூர்வ விசாரணைகளுக்கு உட்பட்டு மட்டுமே தகவல்களை வெளியிட முடியும்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h3 data-ta="மூன்றாம் தரப்பு இணைப்புகள்" data-en="Third-Party Links">மூன்றாம் தரப்பு இணைப்புகள்</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="எங்கள் வெப்சைட்டில் மூன்றாம் தரப்பு தளங்களுக்கான இணைப்புகள் இருக்கலாம். இந்த தளங்களுக்கு அவற்றின் சொந்த தனியுரிமைக் கொள்கைகள் உள்ளன, அவற்றின் உள்ளடக்கம் மற்றும் நடைமுறைகளுக்கு நாங்கள் பொறுப்பல்ல. எந்தவொரு மூன்றாம் தரப்பு தளத்திற்கும் இணைப்பை வழங்கும்போது எச்சரிக்கையுடன் இருக்க பரிந்துரைக்கிறோம்."
+                       data-en="Our website may contain links to third-party sites. These sites have their own privacy policies, and we are not responsible for their content and practices. We recommend being cautious when providing links to any third-party site.">
+                       எங்கள் வெப்சைட்டில் மூன்றாம் தரப்பு தளங்களுக்கான இணைப்புகள் இருக்கலாம். இந்த தளங்களுக்கு அவற்றின் சொந்த தனியுரிமைக் கொள்கைகள் உள்ளன, அவற்றின் உள்ளடக்கம் மற்றும் நடைமுறைகளுக்கு நாங்கள் பொறுப்பல்ல. எந்தவொரு மூன்றாம் தரப்பு தளத்திற்கும் இணைப்பை வழங்கும்போது எச்சரிக்கையுடன் இருக்க பரிந்துரைக்கிறோம்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3 data-ta="உங்கள் தகவல்களை நீங்கள் கட்டுப்படுத்தலாம்" data-en="You Control Your Information">உங்கள் தகவல்களை நீங்கள் கட்டுப்படுத்தலாம்</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="எங்களிடம் உங்கள் தனிப்பட்ட தகவல்கள் தொடர்பாக பின்வரும் உரிமைகள் உள்ளன:"
+                       data-en="You have the following rights regarding your personal information with us:">
+                       எங்களிடம் உங்கள் தனிப்பட்ட தகவல்கள் தொடர்பாக பின்வரும் உரிமைகள் உள்ளன:
+                    </p>
+                    <ul>
+                        <li data-ta="நாங்கள் வைத்திருக்கும் உங்கள் தகவல்களைப் பார்ப்பது" data-en="Viewing your information we hold">நாங்கள் வைத்திருக்கும் உங்கள் தகவல்களைப் பார்ப்பது</li>
+                        <li data-ta="தவறான தகவல்களை திருத்துவது" data-en="Correcting inaccurate information">தவறான தகவல்களை திருத்துவது</li>
+                        <li data-ta="உங்கள் தகவல்களை நீக்கக் கோருவது" data-en="Requesting deletion of your information">உங்கள் தகவல்களை நீக்கக் கோருவது</li>
+                        <li data-ta="தகவல் சேகரிப்பு மற்றும் பயன்பாட்டில் தடை விதிப்பது" data-en="Restricting data collection and use">தகவல் சேகரிப்பு மற்றும் பயன்பாட்டில் தடை விதிப்பது</li>
+                    </ul>
+                    <p data-ta="இந்த உரிமைகளைப் பயன்படுத்த, தயவுசெய்து எங்கள் தனியுரிமைக் குழுவை [மின்னஞ்சல் முகவரி] இல் தொடர்பு கொள்ளவும்."
+                       data-en="To exercise these rights, please contact our privacy team at [email address].">
+                       இந்த உரிமைகளைப் பயன்படுத்த, தயவுசெய்து எங்கள் தனியுரிமைக் குழுவை [மின்னஞ்சல் முகவரி] இல் தொடர்பு கொள்ளவும்.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="policy-heading">
+                    <div class="policy-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 data-ta="கொள்கை மாற்றங்கள்" data-en="Policy Changes">கொள்கை மாற்றங்கள்</h3>
+                </div>
+                <div class="policy-content">
+                    <p data-ta="இந்த தனியுரிமைக் கொள்கையை எந்த நேரத்திலும் மாற்ற நாங்கள் உரிமை கொண்டுள்ளோம். மாற்றங்கள் செய்யப்பட்டால், அவை இந்தப் பக்கத்தில் இடம்பெறும், மேலும் முக்கியமான மாற்றங்களுக்கு நாங்கள் உங்களுக்கு அறிவிப்பு அளிக்கலாம். மாற்றங்களைப் பற்றி அறிய இந்தப் பக்கத்தை அவ்வப்போது சரிபார்க்க பரிந்துரைக்கிறோம்."
+                       data-en="We reserve the right to change this privacy policy at any time. If changes are made, they will be posted on this page, and we may notify you of significant changes. We recommend checking this page periodically to stay informed about changes.">
+                       இந்த தனியுரிமைக் கொள்கையை எந்த நேரத்திலும் மாற்ற நாங்கள் உரிமை கொண்டுள்ளோம். மாற்றங்கள் செய்யப்பட்டால், அவை இந்தப் பக்கத்தில் இடம்பெறும், மேலும் முக்கியமான மாற்றங்களுக்கு நாங்கள் உங்களுக்கு அறிவிப்பு அளிக்கலாம். மாற்றங்களைப் பற்றி அறிய இந்தப் பக்கத்தை அவ்வப்போது சரிபார்க்க பரிந்துரைக்கிறோம்.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="last-updated" data-ta="கடைசியாக புதுப்பிக்கப்பட்டது: ஜனவரி 1, 2023" data-en="Last updated: January 1, 2023">கடைசியாக புதுப்பிக்கப்பட்டது: ஜனவரி 1, 2023</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <a href="about.html" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a>
+                <a href="contact.html" data-ta="தொடர்பு கூட்டல்" data-en="Contact">தொடர்பு கூட்டல்</a>
+                <a href="privacy.html" class="active" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="copyright" data-ta="பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." 
+               data-en="Copyright © 2023 Islamic Teachings. All rights reserved.">
+                பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLang(lang) {
+            document.querySelectorAll('[data-ta]').forEach(element => {
+                if (lang === 'ta') {
+                    element.textContent = element.getAttribute('data-ta');
+                } else if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+        
+        // Initialize page with Tamil language
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('ta');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home – Prophet Muhammad (ﷺ)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d8b4e;
+      --secondary: #1c5c33;
+      --accent: #d4af37;
+      --light: #f8f5e6;
+      --dark: #222;
+      --text: #333;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+      opacity: 0.1;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+    
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    
+    .lang-toggle:hover {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .lang-toggle.active {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+    }
+    
+    nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      padding: 18px 20px;
+      display: inline-block;
+      transition: var(--transition);
+      position: relative;
+      font-weight: 600;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+    
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a.active {
+      color: var(--primary);
+    }
+    
+    /* Content Section */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+    
+    .welcome-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .welcome-content p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .feature-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: white;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    
+    .footer-column p {
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-container {
+        flex-wrap: wrap;
+      }
+      
+      nav a {
+        padding: 15px;
+        font-size: 0.9rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+          data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+      <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+      <div class="language-switcher">
+        <button class="lang-toggle active" onclick="switchLang('ta')">தமிழ்</button>
+        <button class="lang-toggle" onclick="switchLang('en')">English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="active" data-ta="முகப்பு" data-en="Home">முகப்பு</a>
+      <a href="early-life.html" data-ta="வாழ்க்கை வரலாறு" data-en="Early Life">வாழ்க்கை வரலாறு</a>
+      <a href="prophethood.html" data-ta="நபித்துவம்" data-en="Prophethood">நபித்துவம்</a>
+      <a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a>
+      <a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a>
+      <a href="legacy.html" data-ta="மரபு" data-en="Legacy">மரபு</a>
+      <a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2 data-ta="முகப்பு" data-en="Home">முகப்பு</h2>
+      </div>
+      
+      <div class="welcome-content">
+        <p data-ta="இது நபிகள் நாயகம் (ஸல்) அவர்களின் முழு வரலாறு மற்றும் போதனைகள் அடங்கிய வலைத்தளம். இங்கு நீங்கள் அவர்களின் வாழ்க்கை, போதனைகள், அற்புதங்கள் மற்றும் மரபு குறித்து அறிந்து கொள்ளலாம்."
+           data-en="This website contains the complete history and teachings of Prophet Muhammad (ﷺ). Here you can learn about his life, teachings, miracles, and legacy.">
+           இது நபிகள் நாயகம் (ஸல்) அவர்களின் முழு வரலாறு மற்றும் போதனைகள் அடங்கிய வலைத்தளம். இங்கு நீங்கள் அவர்களின் வாழ்க்கை, போதனைகள், அற்புதங்கள் மற்றும் மரபு குறித்து அறிந்து கொள்ளலாம்.
+        </p>
+        
+        <div class="features">
+          <div class="feature-card">
+            <i class="fas fa-book-open"></i>
+            <h3 data-ta="வாழ்க்கை வரலாறு" data-en="Biography">வாழ்க்கை வரலாறு</h3>
+            <p data-ta="நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாற்றை அறிந்து கொள்ளுங்கள்"
+               data-en="Learn about the life history of Prophet Muhammad (ﷺ)">
+               நபிகள் நாயகம் (ஸல்) அவர்களின் வாழ்க்கை வரலாற்றை அறிந்து கொள்ளுங்கள்
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3 data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</h3>
+            <p data-ta="நபிகள் நாயகம் (ஸல்) அவர்களின் போதனைகள் மற்றும் வழிகாட்டுதலைக் கற்றுக்கொள்ளுங்கள்"
+               data-en="Learn the teachings and guidance of Prophet Muhammad (ﷺ)">
+               நபிகள் நாயகம் (ஸல்) அவர்களின் போதனைகள் மற்றும் வழிகாட்டுதலைக் கற்றுக்கொள்ளுங்கள்
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <i class="fas fa-star-and-crescent"></i>
+            <h3 data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</h3>
+            <p data-ta="நபிகள் நாயகம் (ஸல்) அவர்களின் அற்புதங்கள் மற்றும் அதிசயங்களைக் காணுங்கள்"
+               data-en="Discover the miracles and wonders of Prophet Muhammad (ﷺ)">
+               நபிகள் நாயகம் (ஸல்) அவர்களின் அற்புதங்கள் மற்றும் அதிசயங்களைக் காணுங்கள்
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 data-ta="தொடர்புக்கு" data-en="Contact Us">தொடர்புக்கு</h3>
+          <p data-ta="இந்த வலைத்தளம் குறித்து உங்களுக்கு ஏதேனும் கேள்விகள் இருந்தால், தயவு செய்து எங்களை தொடர்பு கொள்ளுங்கள்."
+             data-en="If you have any questions about this website, please feel free to contact us.">
+             இந்த வலைத்தளம் குறித்து உங்களுக்கு ஏதேனும் கேள்விகள் இருந்தால், தயவு செய்து எங்களை தொடர்பு கொள்ளுங்கள்.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3 data-ta="தொடர்பு இணைப்புகள்" data-en="Quick Links">தொடர்பு இணைப்புகள்</h3>
+          <p><a href="contact.html" data-ta="தொடர்பு பக்கம்" data-en="Contact Page">தொடர்பு பக்கம்</a></p>
+          <p><a href="about.html" data-ta="எங்களைப் பற்றி" data-en="About Us">எங்களைப் பற்றி</a></p>
+          <p><a href="privacy.html" data-ta="தனியுரிமைக் கொள்கை" data-en="Privacy Policy">தனியுரிமைக் கொள்கை</a></p>
+        </div>
+        
+        <div class="footer-column">
+          <h3 data-ta="முகவரி" data-en="Address">முகவரி</h3>
+          <p data-ta="டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை"
+             data-en="DP education IT campus ,Oddamavadi , Sri lanka">
+             டிபி கல்வி ஐடி வளாகம், ஒட்டமாவடி, இலங்கை
+          </p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 | DP education IT campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language switching functionality
+    function switchLang(lang) {
+      document.querySelectorAll('[data-ta], [data-en]').forEach(element => {
+        if (element.getAttribute('data-' + lang)) {
+          element.textContent = element.getAttribute('data-' + lang);
+        }
+      });
+      
+      // Update active button state
+      document.querySelectorAll('.lang-toggle').forEach(button => {
+        button.classList.remove('active');
+      });
+      document.querySelector(`.lang-toggle[onclick="switchLang('${lang}')"]`).classList.add('active');
+      
+      // Update page title based on language
+      if (lang === 'ta') {
+        document.title = 'முகப்பு – நபிகள் நாயகம் (ﷺ)';
+      } else {
+        document.title = 'Home – Prophet Muhammad (ﷺ)';
+      }
+    }
+    
+    // Set Tamil as default language
+    document.addEventListener('DOMContentLoaded', function() {
+      switchLang('ta');
+    });
+  </script>
+</body>
+</html>

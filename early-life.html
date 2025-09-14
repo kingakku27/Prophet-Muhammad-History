@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Life – Prophet Muhammad (ﷺ)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-color: #1a472a;
+      --secondary-color: #2e8b57;
+      --accent-color: #d4af37;
+      --light-color: #f8f9fa;
+      --dark-color: #232b2b;
+      --font-tamil: 'Latha', 'InaiMathi', 'Nirmala UI', sans-serif;
+      --font-english: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      font-family: var(--font-tamil), var(--font-english);
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: #f5f5f5;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .lang-toggle {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .lang-toggle:hover {
+      background-color: #c19b2e;
+    }
+    
+    nav {
+      background-color: var(--light-color);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      margin: 1.5rem 0 1rem 0;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--secondary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 10px 40px;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border: 4px solid var(--accent-color);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    .timeline-item:nth-child(odd)::after {
+      right: -13px;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+      left: -13px;
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 18px;
+      }
+      
+      .timeline-item:nth-child(odd)::after,
+      .timeline-item:nth-child(even)::after {
+        left: 18px;
+      }
+    }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-ta], [data-en]').forEach(element => {
+        if (element.hasAttribute(`data-${lang}`)) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = element.getAttribute(`data-${lang}`);
+          } else {
+            element.textContent = element.getAttribute(`data-${lang}`);
+          }
+        }
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Store language preference
+      localStorage.setItem('preferredLang', lang);
+    }
+    
+    // Check for saved language preference
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'ta';
+      switchLang(savedLang);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+        data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+    <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+    <button class="lang-toggle" onclick="switchLang('ta')">தமிழ்</button>
+    <button class="lang-toggle" onclick="switchLang('en')">English</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a>
+    <a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a>
+    <a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a>
+    <a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a>
+    <a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a>
+    <a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a>
+    <a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section>
+      <h2 data-ta="பிறப்பு மற்றும் சிறுவயது" data-en="Birth & Early Childhood">பிறப்பு மற்றும் சிறுவயது</h2>
+      
+      <p data-ta="நபிகள் நாயகம் (ஸல்) 570 ஆம் ஆண்டு ரபீஉல் அவ்வல் மாதம் 12ம் தேதி (ஏப்ரல் 22, 570 CE) அன்று மக்காவில் பிறந்தார்கள். அவர்களின் தந்தை அப்துல்லாஹ் பின் அப்துல் முத்தலிப், அவர்கள் பிறப்பதற்கு சில மாதங்களுக்கு முன்பே காலமானார். தாயார் ஆமினா பின்த் வஹ்ப்."
+             data-en="Prophet Muhammad (ﷺ) was born on the 12th of Rabi' al-Awwal (April 22, 570 CE) in Mecca. His father, Abdullah ibn Abdul-Muttalib, passed away a few months before his birth. His mother was Amina bint Wahb.">
+             நபிகள் நாயகம் (ஸல்) 570 ஆம் ஆண்டு ரபீஉல் அவ்வல் மாதம் 12ம் தேதி (ஏப்ரல் 22, 570 CE) அன்று மக்காவில் பிறந்தார்கள். அவர்களின் தந்தை அப்துல்லாஹ் பின் அப்துல் முத்தலிப், அவர்கள் பிறப்பதற்கு சில மாதங்களுக்கு முன்பே காலமானார். தாயார் ஆமினா பின்த் வஹ்ப்.
+      </p>
+      
+      <p data-ta="அரபு பழக்கத்தின்படி, குழந்தை முஹம்மது (ஸல்) பேடௌன் குலத்தைச் சேர்ந்த தாய்மாமா ஹலீமா சஅதியyaவிடம் ஒப்படைக்கப்பட்டார். அவர் குழந்தையை கிராமப்புறத்திற்கு அழைத்துச் சென்று, சுத்தமான காற்றும், தூய்மையான சூழலும் உள்ள இடத்தில் வளர்த்தெடுத்தார்."
+             data-en="According to Arab tradition, the infant Muhammad (ﷺ) was entrusted to Halima al-Sa'diya, a wet nurse from the Bedouin tribe of Banu Sa'd. She took him to the countryside, where he grew up in the clean air and pure environment of the desert.">
+             அரபு பழக்கத்தின்படி, குழந்தை முஹம்மது (ஸல்) பேடௌன் குலத்தைச் சேர்ந்த தாய்மாமா ஹலீமா சஅதியyaவிடம் ஒப்படைக்கப்பட்டார். அவர் குழந்தையை கிராமப்புறத்திற்கு அழைத்துச் சென்று, சுத்தமான காற்றும், தூய்மையான சூழலும் உள்ள இடத்தில் வளர்த்தெடுத்தார்.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-ta="இளமைக் காலம்" data-en="Youth">இளமைக் காலம்</h2>
+      
+      <p data-ta="நபி (ஸல்) ஆறு வயதாக இருந்தபோது, அவரது தாயார் ஆமினா இறந்துவிட்டார். அதன் பிறகு, அவரது தாத்தா அப்துல் முத்தலிப் அவர்களைக் கவனித்துக் கொண்டார். ஆனால் இரண்டு வருடங்களுக்குப் பிறகு, தாத்தாவும் இறந்துவிடவே, எட்டு வயதான முஹம்மது (ஸல்) அவரது சிற்றப்பா அபூ தாலிபின் காப்பில் வளரலானார்."
+             data-en="When the Prophet (ﷺ) was six years old, his mother Amina passed away. Afterwards, his grandfather Abdul-Muttalib took care of him. But two years later, his grandfather also passed away, and the eight-year-old Muhammad (ﷺ) came under the care of his uncle Abu Talib.">
+             நபி (ஸல்) ஆறு வயதாக இருந்தபோது, அவரது தாயார் ஆமினா இறந்துவிட்டார். அதன் பிறகு, அவரது தாத்தா அப்துல் முத்தலிப் அவர்களைக் கவனித்துக் கொண்டார். ஆனால் இரண்டு வருடங்களுக்குப் பிறகு, தாத்தாவும் இறந்துவிடவே, எட்டு வயதான முஹம்மது (ஸல்) அவரது சிற்றப்பா அபூ தாலிபின் காப்பில் வளரலானார்.
+      </p>
+      
+      <p data-ta="இளம் வயதிலேயே, முஹம்மது (ஸல்) 'அல்-அமீன்' (நம்பகமானவர்) மற்றும் 'அஸ்-ஸாதிக்' (உண்மை பேசுபவர்) எனப் பெயர் பெற்றார். அவரது நேர்மை, நம்பகத்தன்மை மற்றும் உயர்ந்த பண்புகள் அனைவரின் மதிப்பையும் பெற்றுத் தந்தன."
+             data-en="From a young age, Muhammad (ﷺ) earned the titles 'Al-Amin' (the Trustworthy) and 'As-Sadiq' (the Truthful). His integrity, reliability, and noble character earned him respect from everyone.">
+             இளம் வயதிலேயே, முஹம்மது (ஸல்) 'அல்-அமீன்' (நம்பகமானவர்) மற்றும் 'அஸ்-ஸாதிக்' (உண்மை பேசுபவர்) எனப் பெயர் பெற்றார். அவரது நேர்மை, நம்பகத்தன்மை மற்றும் உயர்ந்த பண்புகள் அனைவரின் மதிப்பையும் பெற்றுத் தந்தன.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-ta="வரலாற்றுக் காலக்கோடு" data-en="Historical Timeline">வரலாற்றுக் காலக்கோடு</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="570 CE: பிறப்பு" data-en="570 CE: Birth">570 CE: பிறப்பு</h3>
+            <p data-ta="மக்காவில் பிறந்தார். தந்தை அப்துல்லாஹ் இறப்பு" data-en="Born in Mecca. Father Abdullah passes away">மக்காவில் பிறந்தார். தந்தை அப்துல்லாஹ் இறப்பு</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="575 CE: தாய்மாமா ஹலீமா" data-en="575 CE: With Halima">575 CE: தாய்மாமா ஹலீமா</h3>
+            <p data-ta="பேடouinன் குலத்தினரிடம் வளர்ப்பு" data-en="Raised by Bedouin tribe">பேடouinன் குலத்தினரிடம் வளர்ப்பு</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="577 CE: தாயார் இறப்பு" data-en="577 CE: Mother's Death">577 CE: தாயார் இறப்பு</h3>
+            <p data-ta="தாயார் ஆமினா இறந்தார்" data-en="Mother Amina passes away">தாயார் ஆமினா இறந்தார்</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="579 CE: தாத்தா இறப்பு" data-en="579 CE: Grandfather's Death">579 CE: தாத்தா இறப்பு</h3>
+            <p data-ta="தாத்தா அப்துல் முத்தலிப் இறந்தார்" data-en="Grandfather Abdul-Muttalib passes away">தாத்தா அப்துல் முத்தலிப் இறந்தார்</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="595 CE: வணிகப் பயணம்" data-en="595 CE: Trading Journey">595 CE: வணிகப் பயணம்</h3>
+            <p data-ta="கதீஜா (றலி) அவர்களுக்காக சிரியாவிற்கு வணிகப் பயணம்" data-en="Trade journey to Syria for Khadijah (RA)">கதீஜா (றலி) அவர்களுக்காக சிரியாவிற்கு வணிகப் பயணம்</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="595 CE: திருமணம்" data-en="595 CE: Marriage">595 CE: திருமணம்</h3>
+            <p data-ta="கதீஜா (றலி) அவர்களுடன் திருமணம்" data-en="Marriage to Khadijah (RA)">கதீஜா (றலி) அவர்களுடன் திருமணம்</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-ta="இறைத்தூதராக அறிவிக்கப்படுவதற்கு முன்" data-en="Before Prophethood">இறைத்தூதராக அறிவிக்கப்படுவதற்கு முன்</h2>
+      
+      <p data-ta="இளமைப் பருவத்தில், நபி (ஸல்) ஒரு வணிகராக பல வெற்றிகரமான பயணங்களை மேற்கொண்டார். அவரது நேர்மையான வணிக முறைகள் பலரின் மதிப்பையும் நம்பிக்கையையும் பெற்றுத் தந்தன. 25 வயதில், அவர் கதீஜா (றலி) என்பவருக்காக வணிகம் செய்தார், அவர் பின்னர் அவரை மணந்து கொண்டார்."
+             data-en="In his youth, the Prophet (ﷺ) undertook several successful trading journeys. His honest business practices earned him respect and trust from many. At the age of 25, he conducted trade on behalf of Khadijah (RA), who later proposed to him.">
+             இளமைப் பருவத்தில், நபி (ஸல்) ஒரு வணிகராக பல வெற்றிகரமான பயணங்களை மேற்கொண்டார். அவரது நேர்மையான வணிக முறைகள் பலரின் மதிப்பையும் நம்பிக்கையையும் பெற்றுத் தந்தன. 25 வயதில், அவர் கதீஜா (றலி) என்பவருக்காக வணிகம் செய்தார், அவர் பின்னர் அவரை மணந்து கொண்டார்.
+      </p>
+      
+      <p data-ta="நபி (ஸல்) அக்காலத்து அரபு சமுதாயத்தின் குறைபாடுகளிலிருந்து விலகி இருந்தார். அவர் தனிமையை விரும்பி, ஹிரா குகையில் தியானத்தில் ஈடுபடுவது வழக்கம். இந்தக் காலகட்டத்தில்தான், 40 வயதில், அவருக்கு முதல் வஹீ (தெய்வீக சமூகம்) அருளப்பட்டது."
+             data-en="The Prophet (ﷺ) distanced himself from the corrupt practices of pre-Islamic Arabian society. He often retreated to the Cave of Hira for meditation and contemplation. It was during this period, at the age of 40, that he received his first revelation from Allah.">
+             நபி (ஸல்) அக்காலத்து அரபு சமுதாயத்தின் குறைபாடுகளிலிருந்து விலகி இருந்தார். அவர் தனிமையை விரும்பி, ஹிரா குகையில் தியானத்தில் ஈடுபடுவது வழக்கம். இந்தக் காலகட்டத்தில்தான், 40 வயதில், அவருக்கு முதல் வஹீ (தெய்வீக சமூகம்) அருளப்பட்டது.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 | DP education IT campus</p>
+  </footer>
+
+</body>
+</html>

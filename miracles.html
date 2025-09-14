@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>இஸ்லாம் அற்புதங்கள் - Islamic Miracles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5e63;
+            --secondary-color: #4caf50;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans Tamil', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem;
+            border-radius: 50px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Miracles Section */
+        .miracles-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .miracles-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a5e6320' d='M256 0c5.3 0 10.3 2.7 13.3 7.1c15.8 23.5 36.7 63.7 49.2 109c7.2 26.4 11.8 53.3 13.6 78.1c1.8 24.7 1 46.5-1.3 64.5c-2.2 18.1-5.9 32.2-10.8 42.7c-4.8 10.5-10.8 17.5-17.9 22.1c-7.1 4.6-15.2 7-24.3 7c-17.6 0-31.7-8.4-45.6-17.8c-13.9-9.4-27.9-19.1-45.6-19.1c-9.1 0-17.2 2.4-24.3 7c-7.1 4.6-13.1 11.6-17.9 22.1c-4.8 10.5-8.5 24.6-10.8 42.7c-2.3 18-3.1 39.8-1.3 64.5c1.8 24.8 6.4 51.7 13.6 78.1c12.5 45.3 33.4 85.5 49.2 109c3 4.5 8 7.1 13.3 7.1s10.3-2.7 13.3-7.1c15.8-23.5 36.7-63.7 49.2-109c7.2-26.4 11.8-53.3 13.6-78.1c1.8-24.7 1-46.5-1.3-64.5c-2.2-18.1-5.9-32.2-10.8-42.7c-4.8-10.5-10.8-17.5-17.9-22.1c-7.1-4.6-15.2-7-24.3-7c-17.6 0-31.7 8.4-45.6 17.8c-13.9 9.4-27.9 19.1-45.6 19.1c-9.1 0-17.2-2.4-24.3-7c-7.1-4.6-13.1-11.6-17.9-22.1c-4.8-10.5-8.5-24.6-10.8-42.7c-2.3-18-3.1-39.8-1.3-64.5c1.8-24.8 6.4-51.7 13.6-78.1c12.5-45.3 33.4-85.5 49.2-109C245.7 2.7 250.7 0 256 0z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+        }
+        
+        .miracles-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .miracles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .miracle-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .miracle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .miracle-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .miracle-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .miracle-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Quran Highlight */
+        .quran-highlight {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quran-highlight::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            opacity: 0.1;
+            font-family: serif;
+        }
+        
+        .quran-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quran-reference {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .miracles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .miracles-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span data-ta="இஸ்லாம்" data-en="Islam">இஸ்லாம்</span>
+            </div>
+            <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+                data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+            <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+                <li><a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a></li>
+                <li><a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a></li>
+                <li><a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a></li>
+                <li><a href="miracles.html" class="active" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a></li>
+                <li><a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a></li>
+                <li><a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a></li>
+            </ul>
+            
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang('ta')">தமிழ்</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="page-title" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</h2>
+        
+        <section class="miracles-container">
+            <p class="miracles-intro" data-ta="குர்ஆன் – உலகின் மாற்றமற்ற அதிசயம். மேலும் சந்திரன் பிளந்தது போன்ற நிகழ்வுகள் நடந்தன."
+               data-en="The Qur’an is the eternal miracle. Other miracles include the splitting of the moon.">
+               குர்ஆன் – உலகின் மாற்றமற்ற அதிசயம். மேலும் சந்திரன் பிளந்தது போன்ற நிகழ்வுகள் நடந்தன.
+            </p>
+            
+            <div class="miracles-grid">
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="குர்ஆன்" data-en="The Quran">குர்ஆன்</h3>
+                    <p class="miracle-description" data-ta="மனிதனால் இயற்ற முடியாத இறைவனின் வார்த்தை. அறிவியல் உண்மைகள் முன்கூட்டியே கூறப்பட்டுள்ளன."
+                       data-en="The word of God that cannot be replicated by humans. Contains scientific facts revealed before their discovery.">
+                       மனிதனால் இயற்ற முடியாத இறைவனின் வார்த்தை. அறிவியல் உண்மைகள் முன்கூட்டியே கூறப்பட்டுள்ளன.
+                    </p>
+                </div>
+                
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="சந்திரன் பிளத்தல்" data-en="Splitting of the Moon">சந்திரன் பிளத்தல்</h3>
+                    <p class="miracle-description" data-ta="மக்கா முனிவர்களின் கோரிக்கையை ஏற்று நபிகள் நாயகம் சந்திரனை இரண்டாக பிரித்த அற்புத நிகழ்வு."
+                       data-en="In response to the disbelievers' challenge, Prophet Muhammad split the moon into two parts.">
+                       மக்கா முனிவர்களின் கோரிக்கையை ஏற்று நபிகள் நாயகம் சந்திரனை இரண்டாக பிரித்த அற்புத நிகழ்வு.
+                    </p>
+                </div>
+                
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="நீர் ஊற்று" data-en="Water Spring">நீர் ஊற்று</h3>
+                    <p class="miracle-description" data-ta="பனிப்போரின் போது வறண்ட பகுதியில் நபியின் விரல்களிலிருந்து நீர் ஊற்றியது."
+                       data-en="During the Battle of Tabuk, water sprang from the Prophet's fingers to quench the thirst of his companions.">
+                       பனிப்போரின் போது வறண்ட பகுதியில் நபியின் விரல்களிலிருந்து நீர் ஊற்றியது.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="quran-highlight">
+                <p class="quran-text" data-ta="'நிச்சயமாக நாம் குர்ஆனை இறக்கினோம், நிச்சயமாக நாம் அதன் பாதுகாவலர்கள்.'" 
+                   data-en="'Indeed, it is We who sent down the Qur'an and indeed, We will be its guardian.'">
+                   'நிச்சயமாக நாம் குர்ஆனை இறக்கினோம், நிச்சயமாக நாம் அதன் பாதுகாவலர்கள்.'
+                </p>
+                <p class="quran-reference" data-ta="(குர்ஆன் 15:9)" data-en="(Quran 15:9)">(குர்ஆன் 15:9)</p>
+            </div>
+            
+            <div class="miracles-grid">
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="மரத்தின் அழைப்பு" data-en="Calling of the Tree">மரத்தின் அழைப்பு</h3>
+                    <p class="miracle-description" data-ta="நபிகள் நாயகம் ஒரு மரத்தை அழைத்தபோது, அது வேரொடு பெயர்ந்து அவரிடம் வந்து சேர்ந்தது."
+                       data-en="A tree trunk cried and yearned for the Prophet when he stopped using it as a pulpit, demonstrating his connection to creation.">
+                       நபிகள் நாயகம் ஒரு மரத்தை அழைத்தபோது, அது வேரொடு பெயர்ந்து அவரிடம் வந்து சேர்ந்தது.
+                    </p>
+                </div>
+                
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="உணவின் அதிகரிப்பு" data-en="Increase of Food">உணவின் அதிகரிப்பு</h3>
+                    <p class="miracle-description" data-ta="சிறிய அளவு உணவை நபிகள் நாயகம் ஆசிர்வதித்தபோது, அது பலருக்கு போதுமானதாக அதிகரித்தது."
+                       data-en="The Prophet blessed small amounts of food which then multiplied to feed large numbers of people.">
+                       சிறிய அளவு உணவை நபிகள் நாயகம் ஆசிர்வதித்தபோது, அது பலருக்கு போதுமானதாக அதிகரித்தது.
+                    </p>
+                </div>
+                
+                <div class="miracle-card">
+                    <div class="miracle-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3 class="miracle-title" data-ta="மேகத்தின் நிழல்" data-en="Cloud's Shade">மேகத்தின் நிழல்</h3>
+                    <p class="miracle-description" data-ta="வெயிலின்时候, நபிகள் நாயகத்தின் மீது ஒரு மேகம் நிழல் செய்து அவரைக் காப்பது வழக்கம்."
+                       data-en="A cloud would provide shade for the Prophet during his travels, protecting him from the sun's heat.">
+                       வெயிலின்时候, நபிகள் நாயகத்தின் மீது ஒரு மேகம் நிழல் செய்து அவரைக் காப்பது வழக்கம்.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-nav">
+                <a href="about.html" data-ta="எம்மைப் பற்றி" data-en="About Us">எம்மைப் பற்றி</a>
+                <a href="contact.html" data-ta="தொடர்பு கூட்டல்" data-en="Contact">தொடர்பு கூட்டல்</a>
+                <a href="privacy.html" data-ta="தனியுரிமை" data-en="Privacy">தனியுரிமை</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="copyright" data-ta="பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." 
+               data-en="Copyright © 2023 Islamic Teachings. All rights reserved.">
+                பதிப்புரிமை © 2023 இஸ்லாம் போதனைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLang(lang) {
+            document.querySelectorAll('[data-ta]').forEach(element => {
+                if (lang === 'ta') {
+                    element.textContent = element.getAttribute('data-ta');
+                } else if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+        
+        // Initialize page with Tamil language
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('ta');
+        });
+    </script>
+</body>
+</html>

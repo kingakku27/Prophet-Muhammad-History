@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prophethood – Prophet Muhammad (ﷺ)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-color: #1a472a;
+      --secondary-color: #2e8b57;
+      --accent-color: #d4af37;
+      --light-color: #f8f9fa;
+      --dark-color: #232b2b;
+      --font-tamil: 'Latha', 'InaiMathi', 'Nirmala UI', sans-serif;
+      --font-english: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      font-family: var(--font-tamil), var(--font-english);
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: #f5f5f5;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .lang-toggle {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .lang-toggle:hover {
+      background-color: #c19b2e;
+    }
+    
+    nav {
+      background-color: var(--light-color);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      margin: 1.5rem 0 1rem 0;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    
+    .quote {
+      background-color: #f8f9e6;
+      border-left: 4px solid var(--accent-color);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      border-radius: 4px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--secondary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 10px 40px;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border: 4px solid var(--accent-color);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    .timeline-item:nth-child(odd)::after {
+      right: -13px;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+      left: -13px;
+    }
+    
+    .phase-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .phase-card {
+      flex: 1;
+      min-width: 300px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .phase-card h3 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 18px;
+      }
+      
+      .timeline-item:nth-child(odd)::after,
+      .timeline-item:nth-child(even)::after {
+        left: 18px;
+      }
+      
+      .phase-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-ta], [data-en]').forEach(element => {
+        if (element.hasAttribute(`data-${lang}`)) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = element.getAttribute(`data-${lang}`);
+          } else {
+            element.textContent = element.getAttribute(`data-${lang}`);
+          }
+        }
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Store language preference
+      localStorage.setItem('preferredLang', lang);
+    }
+    
+    // Check for saved language preference
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'ta';
+      switchLang(savedLang);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 data-ta="இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)" 
+        data-en="The Leader of Islam – Prophet Muhammad (ﷺ)">இஸ்லாம் பாதையின் தலைவர் நபிகள் நாயகம் (ஸல்)</h1>
+    <p data-ta="அவர்களின் புனித வரலாறு" data-en="His Blessed History">அவர்களின் புனித வரலாறு</p>
+    <button class="lang-toggle" onclick="switchLang('ta')">தமிழ்</button>
+    <button class="lang-toggle" onclick="switchLang('en')">English</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" data-ta="முகப்பு" data-en="Home">முகப்பு</a>
+    <a href="early-life.html" data-ta="பிறப்பு" data-en="Early Life">பிறப்பு</a>
+    <a href="prophethood.html" data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</a>
+    <a href="teachings.html" data-ta="போதனைகள்" data-en="Teachings">போதனைகள்</a>
+    <a href="miracles.html" data-ta="அற்புதங்கள்" data-en="Miracles">அற்புதங்கள்</a>
+    <a href="legacy.html" data-ta="பெருமைகள்" data-en="Legacy">பெருமைகள்</a>
+    <a href="contact.html" data-ta="தொடர்பு" data-en="Contact">தொடர்பு</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section>
+      <h2 data-ta="தீர்க்கதரிசனம்" data-en="Prophethood">தீர்க்கதரிசனம்</h2>
+      
+      <p data-ta="நபிகள் நாயகம் (ﷺ) 40 வயதில் ஹிரா குகையில் அல்லாஹ்வின் முதல் வஹீ (திருவசனம்) பெற்றார்கள். இந்த அருள்வாக்கு மூலம் அவர் உலகிற்கு இறுதி தூதராக அறிவிக்கப்பட்டார். இறைத்தூதராக்கப்பட்ட இந்த நிகழ்வு இஸ்லாத்தின் வரலாற்றில் மிக முக்கியமான திருப்புமுனையாக அமைந்தது."
+             data-en="Prophet Muhammad (ﷺ) received the first revelation from Allah in the Cave of Hira at the age of 40. Through this divine message, he was declared as the final messenger to the world. This event of prophethood became the most significant turning point in the history of Islam.">
+             நபிகள் நாயகம் (ﷺ) 40 வயதில் ஹிரா குகையில் அல்லாஹ்வின் முதல் வஹீ (திருவசனம்) பெற்றார்கள். இந்த அருள்வாக்கு மூலம் அவர் உலகிற்கு இறுதி தூதராக அறிவிக்கப்பட்டார். இறைத்தூதராக்கப்பட்ட இந்த நிகழ்வு இஸ்லாத்தின் வரலாற்றில் மிக முக்கியமான திருப்புமுனையாக அமைந்தது.
+      </p>
+      
+      <div class="quote" data-ta="'படித்துக் கொள்; உன் இறைவனின் نامے上 அவனே படைத்தான். அவனே மனிதனை (ஒட்டிய) இரத்தத் துணுக்கிலிருந்து படைத்தான். படித்துக் கொள்; உன் இறைவன் மிகைத்த கருணை உடையவன்' – குர்ஆன் (96:1-3)"
+           data-en="'Read in the name of your Lord who created. Created man from a clinging substance. Read, and your Lord is the most Generous' – Qur'an (96:1-3)">
+           'படித்துக் கொள்; உன் இறைவனின் نامے上 அவனே படைத்தான். அவனே மனிதனை (ஒட்டிய) இரத்தத் துணுக்கிலிருந்து படைத்தான். படித்துக் கொள்; உன் இறைவன் மிகைத்த கருணை உடையவன்' – குர்ஆன் (96:1-3)
+      </div>
+      
+      <p data-ta="இந்த முதல் வஹீ வந்தபோது, ஜிப்ரீல் (அலை) தூதர் முஹம்மது (ﷺ) அவர்களிடம், 'இக்ரா' (படி) என்று கூறினார். இதனைத் தொடர்ந்து 23 ஆண்டுகளாக குர்ஆன் அருளப்பெற்றது. இறைத்தூதராக்கப்பட்டதைத் தொடர்ந்து, முஹம்மது (ﷺ) மக்காவில் இஸ்லாத்தைப் பரப்பத் தொடங்கினார்."
+             data-en="When this first revelation came, the angel Jibreel (AS) said to Muhammad (ﷺ), 'Iqra' (Read). This was followed by the revelation of the Qur'an over a period of 23 years. After being appointed as the Messenger, Muhammad (ﷺ) began to spread Islam in Mecca.">
+             இந்த முதல் வஹீ வந்தபோது, ஜிப்ரீல் (அலை) தூதர் முஹம்மது (ﷺ) அவர்களிடம், 'இக்ரா' (படி) என்று கூறினார். இதனைத் தொடர்ந்து 23 ஆண்டுகளாக குர்ஆன் அருளப்பெற்றது. இறைத்தூதராக்கப்பட்டதைத் தொடர்ந்து, முஹம்மது (ﷺ) மக்காவில் இஸ்லாத்தைப் பரப்பத் தொடங்கினார்.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-ta="இறைத்தூதரின் பணிகள்" data-en="The Mission of the Prophet">இறைத்தூதரின் பணிகள்</h2>
+      
+      <div class="phase-container">
+        <div class="phase-card">
+          <h3 data-ta="மக்கா காலம்" data-en="Meccan Period">மக்கா காலம்</h3>
+          <p data-ta="முதல் 13 ஆண்டுகள் மக்காவில் இஸ்லாத்தைப் போதித்தார். இந்தக் காலத்தில் முஸ்லிம்கள் கடும் துன்புறுத்தல்களுக்கு உள்ளானார்கள். இறுதியில் அல்லாஹ்வின் ஆணைய்படி மதீனாவிற்கு ஹிஜ்ரா (குடிபெயர்வு) மேற்கொண்டார்."
+                 data-en="The first 13 years were spent preaching Islam in Mecca. During this period, Muslims faced severe persecution. Finally, following Allah's command, he migrated to Medina (Hijra).">
+                 முதல் 13 ஆண்டுகள் மக்காவில் இஸ்லாத்தைப் போதித்தார். இந்தக் காலத்தில் முஸ்லிம்கள் கடும் துன்புறுத்தல்களுக்கு உள்ளானார்கள். இறுதியில் அல்லாஹ்வின் ஆணைய்படி மதீனாவிற்கு ஹிஜ்ரா (குடிபெயர்வு) மேற்கொண்டார்.
+          </p>
+        </div>
+        
+        <div class="phase-card">
+          <h3 data-ta="மதீனா காலம்" data-en="Medinan Period">மதீனா காலம்</h3>
+          <p data-ta="மதீனாவில் 10 ஆண்டுகள் இஸ்லாத்தை வளர்த்தெடுத்தார். இங்கு முதல் இஸ்லாமிய அரசை நிறுவினார். பல முக்கியமான போர்கள் நடந்தன, இறுதியில் மக்கா வெற்றி கொள்ளப்பட்டு அங்குள்ள idols அழிக்கப்பட்டன."
+                 data-en="In Medina, he spent 10 years developing Islam. Here he established the first Islamic state. Several important battles took place, culminating in the conquest of Mecca and the destruction of idols.">
+                 மதீனாவில் 10 ஆண்டுகள் இஸ்லாத்தை வளர்த்தெடுத்தார். இங்கு முதல் இஸ்லாமிய அரசை நிறுவினார். பல முக்கியமான போர்கள் நடந்தன, இறுதியில் மக்கா வெற்றி கொள்ளப்பட்டு அங்குள்ள idols அழிக்கப்பட்டன.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-ta="வரலாற்றுக் காலக்கோடு" data-en="Historical Timeline">வரலாற்றுக் காலக்கோடு</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="610 CE: முதல் வஹீ" data-en="610 CE: First Revelation">610 CE: முதல் வஹீ</h3>
+            <p data-ta="ஹிரா குகையில் முதல் திருவசனம் அருளப்பெற்றது" data-en="First revelation received in Cave of Hira">ஹிரா குகையில் முதல் திருவசனம் அருளப்பெற்றது</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="613 CE: பொது அழைப்பு" data-en="613 CE: Public Preaching">613 CE: பொது அழைப்பு</h3>
+            <p data-ta="இஸ்லாத்திற்கு பொதுவாக அழைப்பு விடுத்தல்" data-en="Began public preaching of Islam">இஸ்லாத்திற்கு பொதுவாக அழைப்பு விடுத்தல்</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="615 CE: அபிசீனியா ஹிஜ்ரா" data-en="615 CE: Migration to Abyssinia">615 CE: அபிசீனியா ஹிஜ்ரா</h3>
+            <p data-ta="சில முஸ்லிம்கள் துன்புறுத்துதலில் இருந்து தப்ப அபிசீனியா emigrate">சில முஸ்லிம்கள் துன்புறுத்துதலில் இருந்து தப்ப அபிசீனியா emigrate</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="619 CE: துக்க ஆண்டு" data-en="619 CE: Year of Sorrow">619 CE: துக்க ஆண்டு</h3>
+            <p data-ta="கதீஜா (றலி) மற்றும் அபூ தாலிப் இறப்பு" data-en="Death of Khadijah (RA) and Abu Talib">கதீஜா (றலி) மற்றும் அபூ தாலிப் இறப்பு</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="622 CE: மதீனா ஹிஜ்ரா" data-en="622 CE: Migration to Medina">622 CE: மதீனா ஹிஜ்ரா</h3>
+            <p data-ta="முஸ்லிம்களுடன் மதீனா குடிபெயர்வு" data-en="Migration to Medina with Muslims">முஸ்லிம்களுடன் மதீனா குடிபெயர்வு</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="630 CE: மக்கா வெற்றி" data-en="630 CE: Conquest of Mecca">630 CE: மக்கா வெற்றி</h3>
+            <p data-ta="மக்கா வெற்றி மற்றும் கஅபாவில் idols அழித்தல்" data-en="Conquest of Mecca and destruction of idols in Kaaba">மக்கா வெற்றி மற்றும் கஅபாவில் idols அழித்தல்</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3 data-ta="632 CE: இறுதி ஹஜ்" data-en="632 CE: Farewell Pilgrimage">632 CE: இறுதி ஹஜ்</h3>
+            <p data-ta="இறுதி ஹஜ் குர்பானி மற்றும் இறுதி discourse" data-en="Farewell pilgrimage and final sermon">இறுதி ஹஜ் குர்பானி மற்றும் இறுதி discourse</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-ta="இறைத்தூதரின் சிறப்புகள்" data-en="Special Qualities of the Prophet">இறைத்தூதரின் சிறப்புகள்</h2>
+      
+      <div class="quote" data-ta="நிச்சயம், நீர் உயர்ந்த நற்பண்புகளின் உச்சியில் உள்ளீர் – குர்ஆன் (68:4)"
+           data-en="Indeed, you are of a great moral character – Qur'an (68:4)">
+           நிச்சயம், நீர் உயர்ந்த நற்பண்புகளின் உச்சியில் உள்ளீர் – குர்ஆன் (68:4)
+      </div>
+      
+      <p data-ta="நபிகள் நாயகம் (ﷺ) மனிதகுலத்திற்கு அனுப்பப்பட்ட இறுதி தூதராகும். அவர் முந்தைய இறைத்தூதர்கள் அனைவரின் போதனைகளையும் முடிவுறுத்தி நிறைவேற்றியவர். அவரது வாழ்க்கை முழுவதும் மனிதர்களுக்கு சிறந்த முன்மாதிரியாக விளங்குகிறது. குர்ஆன் மற்றும் ஹதீஸ்கள் வழியாக அவரது போதனைகள் இன்றும் முழுமையாகப் பாதுகாக்கப்பட்டுள்ளன."
+             data-en="Prophet Muhammad (ﷺ) is the final messenger sent to humankind. He completed and perfected the teachings of all previous prophets. His entire life serves as the best example for humanity. His teachings are preserved completely to this day through the Qur'an and Hadith.">
+             நபிகள் நாயகம் (ﷺ) மனிதகுலத்திற்கு அனுப்பப்பட்ட இறுதி தூதராகும். அவர் முந்தைய இறைத்தூதர்கள் அனைவரின் போதனைகளையும் முடிவுறுத்தி நிறைவேற்றியவர். அவரது வாழ்க்கை முழுவதும் மனிதர்களுக்கு சிறந்த முன்மாதிரியாக விளங்குகிறது. குர்ஆன் மற்றும் ஹதீஸ்கள் வழியாக அவரது போதனைகள் இன்றும் முழுமையாகப் பாதுகாக்கப்பட்டுள்ளன.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 | DP education IT campus</p>
+  </footer>
+
+</body>
+</html>
